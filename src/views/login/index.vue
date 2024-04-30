@@ -32,10 +32,17 @@
 </template>
 
 <script setup>
-import {ref,reactive} from 'vue'
+import {ref,reactive,onMounted} from 'vue'
 import { apiLogin } from '@/api'
 import { setToken } from '@/utils/auth.js'
 import {useRouter} from 'vue-router'
+
+import { handQueue } from '@/utils/test'
+
+onMounted(()=> {
+    // handQueue([1,2,3,4,5])
+})
+
 const router = useRouter()
 const ruleFormRef = ref();
 const ruleForm = reactive({
